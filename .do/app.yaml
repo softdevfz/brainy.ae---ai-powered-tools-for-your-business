@@ -11,15 +11,6 @@ static_sites:
   envs:
   - key: NODE_ENV
     value: production
-  - key: GEMINI_API_KEY
-    scope: BUILD_TIME
-    type: SECRET
-  - key: PAYPAL_CLIENT_ID
-    scope: BUILD_TIME
-    type: SECRET
-  - key: PAYPAL_CLIENT_SECRET
-    scope: BUILD_TIME
-    type: SECRET
 domains:
 - domain: brainy.ae
   type: PRIMARY
