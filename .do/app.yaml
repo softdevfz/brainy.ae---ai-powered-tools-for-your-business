@@ -1,27 +1,24 @@
 name: brainy-ae
-services:
+static_sites:
 - name: web
   source_dir: /
   github:
     repo: softdevfz/brainy.ae---ai-powered-tools-for-your-business
     branch: main
-  run_command: npm run preview
   build_command: npm run build
-  http_port: 4173
-  instance_count: 1
-  instance_size_slug: basic-xxs
+  output_dir: dist
   environment_slug: node-js
   envs:
   - key: NODE_ENV
     value: production
   - key: GEMINI_API_KEY
-    scope: RUN_TIME
+    scope: BUILD_TIME
     type: SECRET
   - key: PAYPAL_CLIENT_ID
-    scope: RUN_TIME
+    scope: BUILD_TIME
     type: SECRET
   - key: PAYPAL_CLIENT_SECRET
-    scope: RUN_TIME
+    scope: BUILD_TIME
     type: SECRET
 domains:
 - domain: brainy.ae
