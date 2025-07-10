@@ -1,0 +1,25 @@
+name: brainy-ae
+services:
+- name: web
+  source_dir: /
+  github:
+    repo: your-username/brainy.ae---ai-powered-tools-for-your-business
+    branch: main
+  run_command: npm run preview
+  build_command: npm run build
+  http_port: 4173
+  instance_count: 1
+  instance_size_slug: basic-xxs
+  environment_slug: node-js
+  envs:
+  - key: NODE_ENV
+    value: production
+  - key: GEMINI_API_KEY
+    scope: RUN_TIME
+    type: SECRET
+  - key: PAYPAL_CLIENT_ID
+    scope: RUN_TIME
+    type: SECRET
+  - key: PAYPAL_CLIENT_SECRET
+    scope: RUN_TIME
+    type: SECRET 
