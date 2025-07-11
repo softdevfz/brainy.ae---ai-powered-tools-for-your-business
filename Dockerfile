@@ -16,8 +16,8 @@ COPY . .
 # Build the app
 RUN npm run build
 
-# Expose port
-EXPOSE 4173
+# Expose port (Cloud Run uses PORT environment variable)
+EXPOSE 8080
 
-# Start the app
-CMD ["npm", "run", "preview"] 
+# Start the app on the port Cloud Run expects
+CMD ["npm", "run", "preview", "--", "--host", "0.0.0.0", "--port", "8080"] 
