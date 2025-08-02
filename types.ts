@@ -18,6 +18,7 @@ export interface Product {
   tagline: string;
   description: string;
   features: Feature[];
+  url?: string;
 }
 
 export interface PricingPlan {
